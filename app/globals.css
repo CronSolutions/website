@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 250 252;
+    --surface: 255 255 255;
+    --text-primary: 24 24 27;
+    --text-muted: 113 113 122;
+    --border: 228 228 231;
+    --shadow-glass: 0 8px 32px rgba(15, 23, 42, 0.08);
+    --shadow-card-hover: 0 20px 40px rgba(0, 229, 160, 0.12);
+  }
+
+  .dark {
+    --background: 10 10 15;
+    --surface: 17 17 24;
+    --text-primary: 244 244 245;
+    --text-muted: 161 161 170;
+    --border: 255 255 255;
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-card-hover: 0 20px 40px rgba(0, 229, 160, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    [data-gsap-hero-item],
+    [data-gsap-stat],
+    [data-gsap-scroll-hint],
+    [data-gsap-reveal],
+    [data-gsap-split] {
+      will-change: transform, opacity;
+    }
+
+    [data-gsap-hero-item],
+    [data-gsap-stat],
+    [data-gsap-scroll-hint] {
+      opacity: 0;
+    }
+  }
+
+  body {
+    @apply overflow-x-hidden bg-background font-sans text-body text-text-primary antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary text-background;
+  }
+}
+
+@layer components {
+  .page-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  @screen sm {
+    .page-container {
+      padding-left: max(3rem, env(safe-area-inset-left));
+      padding-right: max(3rem, env(safe-area-inset-right));
+    }
+  }
+
+  @screen lg {
+    .page-container {
+      padding-left: max(5rem, env(safe-area-inset-left));
+      padding-right: max(5rem, env(safe-area-inset-right));
+    }
+  }
+
+  @screen xl {
+    .page-container {
+      padding-left: max(7rem, env(safe-area-inset-left));
+      padding-right: max(7rem, env(safe-area-inset-right));
+    }
+  }
+
+  .section-padding {
+    @apply py-section-y;
+  }
+
+  .section-scroll-mt {
+    @apply scroll-mt-nav-offset;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-surface/60 backdrop-blur-xl;
+  }
+
+  .carousel-track {
+    @apply scrollbar-hidden flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-2;
+    scroll-padding-inline: max(1rem, env(safe-area-inset-left));
+  }
+
+  @screen md {
+    .carousel-track {
+      scroll-padding-inline: 0;
+    }
+  }
+
+  .legal-prose h2 {
+    @apply mt-10 font-display text-2xl font-bold text-text-primary first:mt-0;
+  }
+
+  .legal-prose h3 {
+    @apply mt-6 text-lg font-semibold text-text-primary;
+  }
+
+  .legal-prose p {
+    @apply mt-4 text-body text-text-muted;
+  }
+
+  .legal-prose ul {
+    @apply mt-4 list-disc space-y-2 pl-6 text-body text-text-muted;
+  }
+
+  .legal-prose a {
+    @apply text-primary underline-offset-4 hover:underline;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-top {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .touch-target {
+    @apply min-h-touch min-w-touch;
+  }
+
+  .nav-touch-target {
+    @apply min-h-nav-touch min-w-nav-touch;
+  }
+
+  .min-h-screen-dynamic {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
