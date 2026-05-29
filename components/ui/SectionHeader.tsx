@@ -33,9 +33,6 @@ export function SectionHeader({
       >
         {heading}
       </h2>
-      {description ? (
-        <p className="mt-3 text-body text-text-muted sm:mt-4">{description}</p>
-      ) : null}
     </header>
   );
 }

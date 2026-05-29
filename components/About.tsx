@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import {
   ABOUT_CONTENT,
   ABOUT_IMAGE,
-  ABOUT_VALUES,
 } from "@/lib/constants";
 import { useGsapSection } from "@/lib/hooks/useGsapSection";
 import { getIcon } from "@/lib/icons";
@@ -40,53 +39,30 @@ export function About(): React.JSX.Element {
               {ABOUT_CONTENT.headline}
             </h2>
 
-            <div className="mt-5 space-y-4 sm:mt-6">
+            <div className="mt-10 space-y-4 sm:mt-12">
               {ABOUT_CONTENT.paragraphs.map((paragraph) => (
                 <p
                   key={paragraph.slice(0, 40)}
                   data-gsap-reveal
-                  className="text-body text-text-muted"
+                  className="text-2xl leading-[2] text-text-muted"
                 >
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            <ul className="mt-8 space-y-5 sm:mt-10 sm:space-y-6" role="list">
-              {ABOUT_VALUES.map((value: ValueItem) => {
-                const Icon = getIcon(value.iconName);
-                return (
-                  <li
-                    key={value.title}
-                    data-gsap-reveal
-                    className="flex gap-3 sm:gap-4"
-                  >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary sm:h-12 sm:w-12">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-base font-semibold text-text-primary sm:text-lg">
-                        {value.title}
-                      </h3>
-                      <p className="mt-1 text-body-sm text-text-muted">
-                        {value.description}
-                      </p>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            
           </div>
 
           <div data-gsap-split className="relative order-1 lg:order-2">
-            <div className="glass relative aspect-team-mobile max-h-80 overflow-hidden rounded-2xl shadow-glass sm:aspect-team-tablet sm:max-h-none sm:rounded-3xl lg:aspect-portrait lg:max-h-none">
+            <div className="glass relative aspect-team-mobile max-h-80 overflow-hidden rounded-2xl shadow-glass sm:aspect-team-tablet sm:max-h-none sm:rounded-3xl lg:aspect-portrait lg:max-h-[550px]">
               {!imageError ? (
                 <Image
                   src={ABOUT_IMAGE.src}
                   alt={ABOUT_IMAGE.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="100vw"
                   onError={() => setImageError(true)}
                 />
               ) : (

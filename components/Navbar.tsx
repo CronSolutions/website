@@ -62,7 +62,7 @@ export function Navbar(): React.JSX.Element {
             className="group flex min-w-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:gap-4"
             aria-label={`${COMPANY_NAME} home`}
           >
-            <span className="truncate font-display text2xl font-bold tracking-tight text-text-primary lg:text-2xl">
+            <span className="truncate font-display text-2xl font-bold tracking-tight text-text-primary lg:text-2xl">
               {COMPANY_NAME}
             </span>
           </Link>

@@ -25,12 +25,12 @@ function HeroStatItem({
     <div className={compact ? "text-center" : ""}>
       <p
         className={`font-display font-bold text-primary ${
-          compact ? "text-2xl sm:text-3xl" : "text-3xl lg:text-4xl"
+          compact ? "text-5xl sm:text-6xl" : "text-6xl lg:text-7xl"
         }`}
       >
         {stat.value}
       </p>
-      <p className="mt-1 text-xs font-medium uppercase tracking-wider text-text-muted sm:text-sm">
+      <p className="mt-3 text-lg font-medium uppercase tracking-wider text-text-muted sm:text-lg">
         {stat.label}
       </p>
     </div>
@@ -47,7 +47,7 @@ export function Hero(): React.JSX.Element {
     <section
       ref={sectionRef}
       id="home"
-      className="relative flex min-h-screen-dynamic flex-col justify-end overflow-hidden lg:justify-center"
+      className="relative flex min-h-screen-dynamic flex-col overflow-hidden justify-center"
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -91,58 +91,23 @@ export function Hero(): React.JSX.Element {
       </div>
 
       <Container className="relative z-10 w-full pb-12 pt-nav-offset sm:pb-16 lg:pb-20">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
-          <div className="lg:col-span-7 xl:col-span-8">
-            <h1
-              id="hero-heading"
-              data-gsap-hero-item="headline"
-              className="max-w-none font-display text-display text-text-primary"
-            >
-              {HERO_CONTENT.headline}
-            </h1>
+        <div className="flex flex-col items-center text-center">
+          <h1
+            id="hero-heading"
+            data-gsap-hero-item="headline"
+            className="max-w-5xl font-display text-display text-text-primary"
+          >
+            {HERO_CONTENT.headline}
+          </h1>
 
-            <p
-              data-gsap-hero-item="subheadline"
-              className="mt-8 max-w-2xl border-l-2 border-primary/60 pl-5 text-body leading-relaxed text-text-muted sm:mt-10 lg:max-w-xl xl:max-w-2xl"
-            >
-              {HERO_CONTENT.subheadline}
-            </p>
+          <p
+            data-gsap-hero-item="subheadline"
+    
+          />
 
-            <div
-                data-gsap-hero-item="cta"
-                className="mt-12 flex w-full flex-col gap-3 sm:mt-14 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
-              >
-              <Button href={HERO_CONTENT.primaryCta.href} size="lg">
-                {HERO_CONTENT.primaryCta.label}
-              </Button>
-              <Button
-                href={HERO_CONTENT.secondaryCta.href}
-                variant="ghost"
-                size="lg"
-              >
-                {HERO_CONTENT.secondaryCta.label}
-              </Button>
-            </div>
-          </div>
-
-          <div className="hidden lg:col-span-5 lg:block xl:col-span-4">
-            <div className="glass divide-y divide-white/10 rounded-2xl shadow-glass">
-              {HERO_STATS.map((stat: HeroStat) => (
-                <div
-                  key={stat.label}
-                  data-gsap-stat
-                  className="px-4 py-6 text-center"
-                >
-                  <HeroStatItem stat={stat} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-10 lg:hidden">
+          {/* Stats row — no background, bare numbers */}
           <div
-            className="glass grid grid-cols-3 divide-x divide-white/10 rounded-2xl shadow-glass"
+            className="mt-16 grid grid-cols-3 gap-x-10 sm:mt-12 sm:gap-x-16 lg:gap-x-20"
             role="list"
             aria-label="Company statistics"
           >
@@ -151,11 +116,23 @@ export function Hero(): React.JSX.Element {
                 key={stat.label}
                 data-gsap-stat
                 role="listitem"
-                className="px-4 py-5 sm:px-5 sm:py-6 text-center"
+                className="flex flex-col items-center"
               >
                 <HeroStatItem stat={stat} compact />
               </div>
             ))}
+          </div>
+
+          <div
+            data-gsap-hero-item="cta"
+            className="mt-12 flex w-full flex-col gap-3 sm:mt-14 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4"
+          >
+            <Button href={HERO_CONTENT.primaryCta.href} size="lg" className="px-10 py-4 text-lg">
+              {HERO_CONTENT.primaryCta.label}
+            </Button>
+            <Button href={HERO_CONTENT.secondaryCta.href} variant="ghost" size="lg" className="px-10 py-4 text-lg">
+              {HERO_CONTENT.secondaryCta.label}
+            </Button>
           </div>
         </div>
       </Container>

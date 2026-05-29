@@ -104,7 +104,7 @@
   }
 
   .legal-prose h2 {
-    @apply mt-10 font-display text-2xl font-bold text-text-primary first:mt-0;
+    @apply mt-16 font-display text-2xl font-bold text-text-primary first:mt-4;
   }
 
   .legal-prose h3 {

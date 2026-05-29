@@ -17,7 +17,7 @@ const STAR_COUNT = 5;
 function StarRating(): React.JSX.Element {
   return (
     <div
-      className="flex gap-0.5"
+      className="flex gap-0.5 mt-2"
       role="img"
       aria-label={`${STAR_COUNT} out of ${STAR_COUNT} stars`}
     >
@@ -38,23 +38,23 @@ function TestimonialCard({
   item: TestimonialItem;
 }): React.JSX.Element {
   return (
-    <article className="glass flex h-full w-carousel-slide max-w-carousel-card flex-col rounded-2xl p-5 shadow-glass sm:p-6 md:w-full md:max-w-none">
-      <StarRating />
-      <blockquote className="mt-4 flex-1 text-body-sm leading-relaxed text-text-primary">
+    <article className="glass flex h-full w-carousel-slide max-w-carousel-card flex-col rounded-2xl p-7 shadow-glass sm:p-9 md:w-full md:max-w-none">
+      <StarRating/>
+      <blockquote className="mt-8 flex-1 text-xl leading-relaxed text-text-primary">
         <p>&ldquo;{item.quote}&rdquo;</p>
       </blockquote>
-      <footer className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4 sm:mt-6">
+      <footer className="mt-5 flex items-center gap-4 border-t border-white/10 pt-5 sm:mt-6">
         <div
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary/30 text-sm font-bold text-text-primary"
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary/30 text-base font-bold text-text-primary"
           aria-hidden
         >
           {item.initials}
         </div>
         <div className="min-w-0">
-          <cite className="block truncate not-italic font-semibold text-text-primary">
+          <cite className="block truncate not-italic text-lg font-semibold text-text-primary">
             {item.name}
           </cite>
-          <p className="truncate text-xs text-text-muted sm:text-sm">
+          <p className="truncate text-base text-text-muted">
             {item.role}, {item.company}
           </p>
         </div>
