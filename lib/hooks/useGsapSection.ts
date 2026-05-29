@@ -27,6 +27,7 @@ export function useGsapSection(
 
   useEffect(() => {
     registerGsapPlugins();
+    ScrollTrigger.config({ ignoreMobileResize: true });
     const section = sectionRef.current;
     if (!section) return;
 

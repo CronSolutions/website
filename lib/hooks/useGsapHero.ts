@@ -10,6 +10,7 @@ import { gsap, registerGsapPlugins } from "@/lib/gsap/register";
 export function useGsapHero(sectionRef: RefObject<HTMLElement | null>): void {
   useEffect(() => {
     registerGsapPlugins();
+    ScrollTrigger.config({ ignoreMobileResize: true });
     const section = sectionRef.current;
     if (!section) return;
 

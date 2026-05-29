@@ -24,7 +24,7 @@ export function WovenCanvas(): React.JSX.Element {
     mountRef.current.appendChild(renderer.domElement);
 
     const mouse = new THREE.Vector2(0, 0);
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
 
     // --- Particles ---
     const particleCount = 50000;
@@ -86,7 +86,7 @@ export function WovenCanvas(): React.JSX.Element {
 
     const animate = () => {
       animFrameId = requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) / 1000;
 
       const mouseWorld = new THREE.Vector3(mouse.x * 3, mouse.y * 3, 0);
 

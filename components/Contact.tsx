@@ -136,6 +136,7 @@ export function Contact(): React.JSX.Element {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="John Smith"
+                    autoComplete="name"
                     className="rounded-xl border border-white/10 bg-background/50 px-4 py-3 text-base text-text-primary placeholder:text-text-muted/50 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40 transition-colors"
                   />
                 </div>
@@ -151,6 +152,7 @@ export function Contact(): React.JSX.Element {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={form.email}
                     onChange={handleChange}
@@ -170,6 +172,7 @@ export function Contact(): React.JSX.Element {
                     id="company"
                     name="company"
                     type="text"
+                    autoComplete="organization"
                     value={form.company}
                     onChange={handleChange}
                     placeholder="Acme Inc. (optional)"
@@ -188,6 +191,7 @@ export function Contact(): React.JSX.Element {
                         id="phone"
                         name="phone"
                         type="tel"
+                        autoComplete="tel"
                         value={form.phone}
                         onChange={handlePhoneChange}
                         placeholder="(555) 000-0000"

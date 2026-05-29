@@ -90,6 +90,9 @@ export function createHeroParallax(scope: Element): ScrollTrigger | null {
   const bg = scope.querySelector("[data-gsap-hero='bg']");
   if (!bg) return null;
 
+  // Disable parallax on mobile entirely — it's barely visible anyway
+  if (window.innerWidth < 768) return null;
+
   return ScrollTrigger.create({
     trigger: scope,
     start: "top top",

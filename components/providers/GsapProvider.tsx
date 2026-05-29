@@ -11,6 +11,7 @@ export function GsapProvider({
 }): React.JSX.Element {
   useEffect(() => {
     registerGsapPlugins();
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
     const handleLoad = (): void => {
       refreshScrollTrigger();
