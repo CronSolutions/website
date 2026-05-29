@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { GsapProvider } from "@/components/providers/GsapProvider";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
+import { Contact } from "@/components/Contact";
 
 export default function HomePage(): React.JSX.Element {
   return (
@@ -16,6 +17,7 @@ export default function HomePage(): React.JSX.Element {
         <Services />
         <Testimonials />
       </main>
+      <Contact />
       <Footer />
     </GsapProvider>
   );

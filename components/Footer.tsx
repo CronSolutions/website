@@ -27,7 +27,7 @@ export function Footer(): React.JSX.Element {
     <footer
       ref={sectionRef}
       id="contact"
-      className="section-scroll-mt border-t border-white/10 bg-surface safe-bottom"
+      className="section-scroll-mt border-t border-white/10 bg-background safe-bottom"
       aria-labelledby="footer-heading"
     >
       <Container className="py-12 sm:py-16">

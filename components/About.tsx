@@ -8,8 +8,6 @@ import {
   ABOUT_IMAGE,
 } from "@/lib/constants";
 import { useGsapSection } from "@/lib/hooks/useGsapSection";
-import { getIcon } from "@/lib/icons";
-import type { ValueItem } from "@/lib/types";
 
 export function About(): React.JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
