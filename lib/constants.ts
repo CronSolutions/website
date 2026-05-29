@@ -66,7 +66,7 @@ export const HERO_CONTENT = {
   subheadline:
     "Cron Solutions partners with ambitious businesses to launch fast, scalable websites and data-driven SEO programs that turn organic search into measurable revenue.",
   primaryCta: { label: "Start Your Project", href: "#contact" },
-  secondaryCta: { label: "See Our Work", href: "#services" },
+  secondaryCta: { label: "See Our Work", href: "/" },
   scrollLabel: "Scroll to explore",
 };
 

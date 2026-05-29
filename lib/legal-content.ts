@@ -1,7 +1,7 @@
 import type { LegalDocument } from "./types";
 
-const LAST_UPDATED = "December 1, 2024";
-const CONTACT_EMAIL = "hello@cronsolutions.com";
+const LAST_UPDATED = "December 13, 2025";
+const CONTACT_EMAIL = "ryan@cronsolutions.com";
 
 export const PRIVACY_POLICY: LegalDocument = {
   slug: "privacy",
@@ -107,7 +107,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       id: "contact",
       title: "Contact Us",
       paragraphs: [
-        `If you have questions about this Privacy Policy or our data practices, email us at ${CONTACT_EMAIL} or write to Cron Solutions, San Francisco, CA.`,
+        `If you have questions about this Privacy Policy or our data practices, email us at ${CONTACT_EMAIL}.`,
       ],
     },
   ],

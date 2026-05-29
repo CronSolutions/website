@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { WovenCanvas } from "@/components/ui/woven-canvas";
 import {
   HERO_CONTENT,
   HERO_IMAGE,
@@ -51,6 +52,7 @@ export function Hero(): React.JSX.Element {
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Background image layer */}
         <div
           data-gsap-hero="bg"
           className="absolute inset-0 will-change-transform"
@@ -67,9 +69,14 @@ export function Hero(): React.JSX.Element {
             />
           ) : null}
         </div>
+
+        {/* ✦ Woven particle effect — sits above image, below overlays */}
+        <WovenCanvas />
+
+        {/* Overlay gradients — unchanged, keep them above the particles */}
         <div
           data-gsap-hero="overlay"
-          className={`absolute inset-0 ${
+          className={`absolute inset-0 z-10 ${
             imageError
               ? "bg-hero-noise bg-hero-radial bg-background"
               : "bg-background/30"
@@ -77,15 +84,15 @@ export function Hero(): React.JSX.Element {
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20"
+          className="absolute inset-0 z-10 bg-gradient-to-r from-background via-background/85 to-background/20"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"
+          className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/60 to-transparent"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-transparent"
+          className="absolute inset-0 z-10 bg-gradient-to-b from-background/80 via-transparent to-transparent"
           aria-hidden
         />
       </div>
@@ -102,10 +109,9 @@ export function Hero(): React.JSX.Element {
 
           <p
             data-gsap-hero-item="subheadline"
-    
           />
 
-          {/* Stats row — no background, bare numbers */}
+          {/* Stats row */}
           <div
             className="mt-16 grid grid-cols-3 gap-x-10 sm:mt-12 sm:gap-x-16 lg:gap-x-20"
             role="list"
