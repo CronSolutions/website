@@ -26,7 +26,7 @@ export function Footer(): React.JSX.Element {
   return (
     <footer
       ref={sectionRef}
-      id="contact"
+      id="footer"
       className="section-scroll-mt border-t border-white/10 bg-background safe-bottom"
       aria-labelledby="footer-heading"
     >

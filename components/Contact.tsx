@@ -70,7 +70,7 @@ export function Contact(): React.JSX.Element {
 
   return (
     <section
-      id="contact-form"
+      id="contact"
       ref={sectionRef}
       className="section-scroll-mt section-padding bg-surface"
       aria-labelledby="contact-heading"
@@ -89,7 +89,7 @@ export function Contact(): React.JSX.Element {
               Ready to Scale High?
             </h2>
             <p className="mt-4 text-xl text-text-muted leading-relaxed">
-              Tell us about your project. We'll get back to you within 24 hours.
+              Tell us about your project. We&apos;ll get back to you within 24 hours.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export function Contact(): React.JSX.Element {
                 Message Sent!
               </h3>
               <p className="text-lg text-text-muted">
-                We'll be in touch shortly.
+                We&apos;ll be in touch shortly.
               </p>
               <button
                 onClick={() => setStatus("idle")}
