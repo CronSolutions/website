@@ -5,7 +5,7 @@ import {
   createHeroParallax,
   createHeroTimeline,
 } from "@/lib/gsap/animations";
-import { gsap, registerGsapPlugins } from "@/lib/gsap/register";
+import { gsap, registerGsapPlugins, ScrollTrigger } from "@/lib/gsap/register";
 
 export function useGsapHero(sectionRef: RefObject<HTMLElement | null>): void {
   useEffect(() => {

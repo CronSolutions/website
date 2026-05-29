@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { refreshScrollTrigger } from "@/lib/gsap/animations";
-import { registerGsapPlugins } from "@/lib/gsap/register";
+import { registerGsapPlugins, ScrollTrigger } from "@/lib/gsap/register";
 
 export function GsapProvider({
   children,

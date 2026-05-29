@@ -5,7 +5,7 @@ import {
   createScrollReveal,
   createSplitReveal,
 } from "@/lib/gsap/animations";
-import { registerGsapPlugins } from "@/lib/gsap/register";
+import { registerGsapPlugins, ScrollTrigger } from "@/lib/gsap/register";
 
 interface UseGsapSectionOptions {
   revealSelector?: string;
