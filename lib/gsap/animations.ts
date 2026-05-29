@@ -128,7 +128,7 @@ export function createScrollReveal(
     duration = 0.7,
   } = options;
 
-  gsap.set(targets, { opacity: 0, y, scale });
+  gsap.set(targets, { opacity: 0, y });
 
   return ScrollTrigger.create({
     trigger,
@@ -138,7 +138,6 @@ export function createScrollReveal(
       gsap.to(targets, {
         opacity: 1,
         y: 0,
-        scale: 1,
         duration,
         stagger,
         ease: GSAP_EASE.out,
