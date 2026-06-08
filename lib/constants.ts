@@ -53,7 +53,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const NAV_CTA = {
